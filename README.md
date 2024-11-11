@@ -1,3 +1,6 @@
+# about copyright
+This project is only intended to help students quickly get started using deep learning to process point cloud tasks. After completing the course tasks, this project will be deleted.
+
 # PointNet.pytorch
 这个仓库是PointNet在pytorch中的实现。这个项目只是为了帮助学生快速开始点云深度学习的预训练项目。因此，大部分代码已经简化或删除。如果你对PointNet有进一步的兴趣，可以从以下链接获取完整版本的项目代码：https://github.com/fxia22/pointnet.pytorch
 
@@ -13,7 +16,7 @@
 最后在测试过程中产生的结果放置在 `/results/seg_viewer` 中， 用于可视化分割结果，如果你使用远程服务器训练模型，记得把results文件夹下载到本地来运行，因为远程服务器运行该程序时无法看到可视化窗口。
 
 # 下载项目
-
+git clone https://github.com/tripmasterwang/pointnet.pytorch.git
 
 # 环境配置
 环境中最难配置的是pytorch，如果已经有可以使用pytorch的环境，就使用那个环境。然后
