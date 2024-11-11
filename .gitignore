@@ -1,0 +1,5 @@
+datasets/ShapeNetCore/shapenetcore_partanno_segmentation_benchmark_v0/
+datasets/ShapeNetCore/ShapeNetCoreNPY_2048
+results/points/
+results/points_label/
+checkpoints
