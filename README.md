@@ -20,18 +20,29 @@ git clone https://github.com/tripmasterwang/pointnet.pytorch.git
 
 # 环境配置
 环境中最难配置的是pytorch，如果已经有可以使用pytorch的环境，就使用那个环境。然后
+
 cd 项目目录
+
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
 pip install -e .
+
 即可
 
 如果没有可以使用pytorch的环境。先添加清华镜像源，然后创建一个python版本3.7的环境：
+
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
 conda create -n pointnet python=3.7 -y
+
 conda activate pointnet
+
 cd 项目目录
+
 pip install -e .
+
 然后参照链接内的pdf文件安装pytorch：
+
 通过百度网盘分享的文件：Python深度学习(1)：安装Anaconda、PyTorch（GP...
 链接：https://pan.baidu.com/s/12ohIqsO4ACIfDfkJLaZ8Ww?pwd=sewh 
 提取码：sewh 
