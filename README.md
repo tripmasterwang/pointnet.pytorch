@@ -1,4 +1,4 @@
-# about copyright
+# About Copyright
 This project is only intended to help students quickly get started using deep learning to process point cloud tasks. After completing the course tasks, this project will be deleted.
 
 # PointNet.pytorch
