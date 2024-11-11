@@ -4,11 +4,7 @@ import numpy as np
 
 class NormalizeCoord(object):
     def __call__(self, pcd):
-        # modified from pointnet2
-        centroid = np.mean(pcd, axis=0)
-        pcd -= centroid
-        m = np.max(np.sqrt(np.sum(pcd ** 2, axis=1)))
-        pcd = pcd / m
+    # BLANK
         return pcd
 
 

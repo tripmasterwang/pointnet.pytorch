@@ -13,25 +13,11 @@ import datasets.ShapeNetCore.transform as aug_transform
 from config.config import cfg
 
 def fps_sampling(pcd, num_samples, return_indices=False):
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    pcd_tensor = torch.from_numpy(pcd).to(device)
-
-    N, _ = pcd_tensor.shape
-    sampled_indices = torch.zeros(num_samples, dtype=torch.long, device=device)
-    distances = torch.ones(N, device=device) * float('inf')
-
-    sampled_indices[0] = torch.randint(0, N, (1,), device=device)
-    for i in range(1, num_samples):
-        current_point = pcd_tensor[sampled_indices[i - 1]].unsqueeze(0)
-        dist = torch.cdist(current_point, pcd_tensor, p=2).squeeze(0)
-        distances = torch.min(distances, dist)
-        sampled_indices[i] = torch.argmax(distances)
-
+    #BLANK
     if return_indices:
         return sampled_indices.cpu().numpy()
     else:
-        sampled_pcd_tensor = pcd_tensor[sampled_indices]
-        sampled_pcd = sampled_pcd_tensor.cpu().numpy()
+        #BLANK
         return sampled_pcd
 
 
@@ -47,9 +33,10 @@ class ShapeNetCore(Dataset):
         self.RandomRotate_y = aug_transform.RandomRotate(angle=[-1, 1], axis="y", p=1.0)
         self.RandomRotate_x = aug_transform.RandomRotate(angle=[-1, 1], axis="x", p=1.0)
 
-        self.train_aug_compose = aug_transform.Compose([self.CenterShift, self.RandomRotate_z, self.RandomRotate_y, self.RandomRotate_x,
-                                                        self.NormalizeCoord])
-        self.test_aug_compose = aug_transform.Compose([self.CenterShift, self.NormalizeCoord])
+        # BLANK: finish self.train_aug_compose and self.test_aug_compose
+        # self.train_aug_compose = ？
+        # self.test_aug_compose = ？
+
         
     def __len__(self):
         return len(self.pcds)
@@ -142,7 +129,8 @@ with open(output_file, 'w') as f:
                                                 worker_init_fn=train_dataset.worker_init_fn)
         train_dataloaders[ID] = train_dataloader
         
-        test_pcds = np.delete(pcds, train_index, axis=0)
+        # BLANK finish the definition of test_pcds
+        # test_pcds = ？
         test_seg_labels = np.delete(seg_labels, train_index, axis=0)
         test_dataset = ShapeNetCore(test_pcds, test_seg_labels, cfg) #这有问题
         test_dataloader = DataLoader(test_dataset, batch_size=cfg.batch_size, 

@@ -62,8 +62,10 @@ pip install -e .
 
 Testing category 02691156 with 4 parts
 Test Accuracy: 75.34%
+
 Testing category 02773838 with 2 parts
 Test Accuracy: 85.84%
+
 Testing category 02954340 with 2 parts
 Test Accuracy: 88.93%
 
